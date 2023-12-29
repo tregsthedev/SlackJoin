@@ -1,14 +1,28 @@
 const { App } = require('@slack/bolt');
+const { APP } = require('dotenv').config()
 
 // Initializes your app with your bot token and signing secret
 const app = new App({
-  token: 'xoxb-2210535565-6416225480785-a8g4OwF3WvRAp2kT4ZVcGcN6',
-  signingSecret: '3bf73a85f50742ae6dd5cc76afeb3a2e',
-  appToken: 'xapp-1-A06BSKDFNKF-6426439314160-8519fd197504f05d40c0d9f3bfc113e7bca126d418640b9c304718449d5391d4',
+  token: process.env.token,
+  signingSecret: process.env.signingSecret,
+  appToken: process.env.appToken,
   socketMode: true
 });
 
-app.event('team_join')
+const channelID = "C02B7CWDD0E" // #annoucements
+const userID = "U01MPHKFZ7S" 
+
+app.event('member_joined_channel', async ({ event, client, logger }) => {
+  console.log("test")
+
+ 
+  await app.client.chat.postMessage({
+    channel: channelID,
+    text: `hi`
+  })
+
+
+});
 
 (async () => {
     // Start your app
