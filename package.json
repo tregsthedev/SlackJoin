@@ -1,0 +1,19 @@
+{
+  "name": "slackjoin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tregsthedev/slackjoin.git"
+  },
+  "author": "Arav Narula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tregsthedev/slackjoin/issues"
+  },
+  "homepage": "https://github.com/tregsthedev/slackjoin#readme"
+}
